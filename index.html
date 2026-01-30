@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بلاگ DarkCity VPN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap">
+    <link rel="icon" type="image/x-icon" href="https://darkcityshop.ir/logo.jpg">
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --gradient: linear-gradient(135deg, #8b5cf6, #6366f1);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --dark: #0f172a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Vazirmatn', sans-serif; word-wrap: break-word; }
+        body { background: var(--dark); color: #e2e8f0; position: relative; }
+        #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
+        header { position: fixed; top: 0; width: 100%; padding: 1.5rem 5%; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1); z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; color: transparent; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 120px 1.5rem 6rem; }
+        .post-card { background: var(--card-bg); border-radius: 20px; overflow: hidden; margin-bottom: 3rem; transition: transform 0.3s; animation: fadeInUp 1s ease; }
+        .post-card:hover { transform: translateY(-10px); }
+        .post-image { width: 100%; height: auto; max-height: 400px; object-fit: cover; }
+        .post-content { padding: 1.5rem; }
+        .post-title { font-size: 1.8rem; margin-bottom: 1rem; background: var(--gradient); -webkit-background-clip: text; color: transparent; line-height: 1.3; }
+        .post-excerpt { color: #94a3b8; line-height: 1.7; margin-bottom: 1.5rem; font-size: 1rem; }
+        .read-more { background: var(--gradient); color: white; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; font-size: 1rem; }
+        .no-content { text-align: center; padding: 4rem 2rem; background: var(--card-bg); border-radius: 20px; }
+        .no-content i { font-size: 4.5rem; color: var(--primary); margin-bottom: 1.5rem; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) {
+            .container { padding: 110px 1rem 4rem; }
+            .post-title { font-size: 1.6rem; }
+            .post-excerpt { font-size: 0.95rem; }
+            .post-content { padding: 1.2rem; }
+            .read-more { padding: 0.7rem 1.5rem; font-size: 0.95rem; }
+        }
+        @media (max-width: 480px) {
+            .post-title { font-size: 1.4rem; }
+            .post-excerpt { font-size: 0.9rem; }
+            .post-content { padding: 1rem; }
+            .read-more { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <header>
+        <div class="logo"><i class="ri-shield-keyhole-line"></i> بلاگ دارک سیتی شاپ</div>
+    </header>
+
+    <div class="container">
+        <!-- مقاله Hiddify -->
+        <div class="post-card">
+            <img src="uploads/hiddify-banner.jpg" alt="Hiddify" class="post-image">
+            <div class="post-content">
+                <h2 class="post-title">آموزش اتصال به کانفیگ با برنامه Hiddify در اندروید</h2>
+                <p class="post-excerpt">راهنمای کامل و سریع برای اتصال به سرورهای DarkCity با Hiddify – ساده، امن و سریع!</p>
+                <a href="articles/hiddify-tutorial.html" class="read-more">بخوان بیشتر →</a>
+            </div>
+        </div>
+
+        <!-- مقاله V2RayNG -->
+        <div class="post-card">
+            <img src="uploads/V2RayNG-banner.jpg" alt="V2RayNG" class="post-image">
+            <div class="post-content">
+                <h2 class="post-title">آموزش اتصال کانفیگ در برنامه V2RayNG در اندروید</h2>
+                <p class="post-excerpt">راهنمای قدم به قدم برای نصب و استفاده از V2RayNG با کانفیگ‌های DarkCity – سریع و بدون محدودیت!</p>
+                <a href="articles/V2RayNG-tutorial.html" class="read-more">بخوان بیشتر →</a>
+            </div>
+        </div>
+
+        <!-- مقاله جدید V2Box iOS -->
+        <div class="post-card">
+            <img src="uploads/ios-v2box.jpg" alt="V2Box iOS" class="post-image">
+            <div class="post-content">
+                <h2 class="post-title">آموزش اتصال به کانفیگ در برنامه V2Box در iOS</h2>
+                <p class="post-excerpt">راهنمای کامل نصب و استفاده از V2Box برای کاربران آیفون و آیپد – اتصال امن و پایدار به سرورهای DarkCity!</p>
+                <a href="articles/v2box-ios-tutorial.html" class="read-more">بخوان بیشتر →</a>
+            </div>
+        </div>
+
+        <!-- مقاله‌های بیشتر رو همینجا اضافه کن -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            particles: { number: { value: 80 }, color: { value: "#8b5cf6" }, shape: { type: "circle" }, opacity: { value: 0.5 }, size: { value: 3 }, line_linked: { enable: true, distance: 150, color: "#8b5cf6", opacity: 0.2, width: 1 }, move: { enable: true, speed: 2 } }, interactivity: { events: { onhover: { enable: true, mode: "repulse" } } } });
+    </script>
+</body>
+</html>
