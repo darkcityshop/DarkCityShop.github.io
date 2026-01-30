@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ادیتور مقاله | DarkCity</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tiny.cloud/1/gk60ah3lr6ay2z82k4ahv3q9r3h82tasoamvc7l9ne4kk7jl/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <style>
+        body { background: #0f172a; color: #e2e8f0; font-family: 'Vazirmatn', sans-serif; padding: 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; background: rgba(30, 41, 59, 0.7); padding: 3rem; border-radius: 20px; }
+        input { width: 100%; padding: 1rem; margin: 1.5rem 0; border-radius: 12px; background: #1e293b; color: white; border: none; font-size: 1.2rem; }
+        .btn { background: linear-gradient(135deg, #8b5cf6, #6366f1); color: white; padding: 1rem 2rem; border: none; border-radius: 12px; cursor: pointer; font-size: 1.1rem; margin-top: 2rem; }
+        textarea { display: none; }
+        #output { background: #1e293b; color: white; padding: 2rem; border-radius: 12px; margin-top: 2rem; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align:center; margin-bottom:2rem;">ادیتور مقاله DarkCity</h1>
+        <a href="/" style="color:#94a3b8;">← بازگشت به بلاگ</a>
+
+        <input type="text" id="title" placeholder="عنوان مقاله" value="عنوان مقاله جدید">
+
+        <textarea id="editor"></textarea>
+
+        <button class="btn" onclick="generateHTML()">تولید کد HTML آماده</button>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        tinymce.init({
+            selector: '#editor',
+            height: 700,
+            directionality: 'rtl',
+            language: 'fa',
+            plugins: 'image link table code lists media emoticons preview fullscreen',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline | align lineheight | numlist bullist indent outdent | link image media table | code emoticons preview fullscreen',
+            images_upload_url: '/uploads',
+            automatic_uploads: true,
+            relative_urls: false,
+            remove_script_host: false
+        });
+
+        function generateHTML() {
+            const title = document.getElementById('title').value || 'مقاله جدید';
+            const content = tinymce.get('editor').getContent();
+            const html = `<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${title}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap">
+    <style>
+        body { background: #0f172a; color: #e2e8f0; font-family: 'Vazirmatn', sans-serif; padding: 3rem; line-height: 1.8; }
+        .container { max-width: 900px; margin: 0 auto; background: rgba(30, 41, 59, 0.7); padding: 3rem; border-radius: 20px; }
+        h1 { font-size: 2.8rem; background: linear-gradient(135deg, #8b5cf6, #6366f1); -webkit-background-clip: text; color: transparent; text-align: center; margin-bottom: 2rem; }
+        img { max-width: 100%; border-radius: 12px; margin: 2rem 0; }
+        a { color: #8b5cf6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>${title}</h1>
+        ${content}
+        <p style="text-align:center; margin-top:3rem;"><a href="/">← بازگشت به بلاگ</a></p>
+    </div>
+</body>
+</html>`;
+
+            document.getElementById('output').textContent = html;
+            alert('کد HTML آماده شد! کپی کن و تو فایل جدید در پوشه articles ذخیره کن.');
+        }
+    </script>
+</body>
+</html>
